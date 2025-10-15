@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Books & Authors</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>📚 Books & ✍️ Authors</h1>
+    <p>A tiny frontend for your Express + MongoDB API</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Add Author</h2>
+      <form id="author-form">
+        <div class="row">
+          <label for="author-name">Name</label>
+          <input id="author-name" name="name" required placeholder="e.g., Sohrab Afsardoost"/>
+        </div>
+        <div class="row">
+          <label for="author-bio">Bio</label>
+          <input id="author-bio" name="bio" required placeholder="e.g., Web developer"/>
+        </div>
+        <button type="submit">Add Author</button>
+      </form>
+      <div id="authors-status" class="status"></div>
+      <ul id="authors-list" class="list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Add Book</h2>
+      <form id="book-form">
+        <div class="row">
+          <label for="book-title">Title</label>
+          <input id="book-title" name="title" required placeholder="e.g., VS Web"/>
+        </div>
+        <div class="row">
+          <label for="book-year">Year</label>
+          <input id="book-year" name="year" type="number" min="0" placeholder="e.g., 2025"/>
+        </div>
+        <div class="row">
+          <label for="book-author">Author</label>
+          <select id="book-author" name="author" required>
+            <option value="">-- Select author --</option>
+          </select>
+        </div>
+        <button type="submit">Add Book</button>
+      </form>
+      <div id="books-status" class="status"></div>
+      <ul id="books-list" class="list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>Made for COMP229 Midterm</small>
+  </footer>
+
+  <script>
+    // If you're serving frontend from the same Express app,
+    // leave API_BASE as empty string to use same-origin requests.
+    // If you serve this file with Live Server or another origin,
+    // set API_BASE to your backend origin, e.g., "http://localhost:3000".
+    window.API_BASE = "";
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
